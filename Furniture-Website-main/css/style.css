@@ -1,0 +1,697 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    font-family: 'Poppins' , sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    -webkit-transition: .2s linear;
+    transition: .2s linear;
+}
+
+body{
+    background-color: #faf7f6;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+html::-webkit-scrollbar-track{
+    background: #eae0dc;
+}
+html::-webkit-scrollbar-thumb{
+    background: #b58d7e;
+}
+
+section{
+    padding: 3rem 9%;
+}
+
+.heading{
+    background: #e1cec7;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    margin: 2%;
+    border-radius: 3rem;
+}
+
+.heading h3{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: #5e473e;
+}
+
+.heading p{
+    color: #31231e;
+}
+
+.heading p a{
+    color: #5e473e ;
+}
+
+.heading p a:hover {
+    color: #845f51;
+}
+
+.title{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    border-bottom: 0.1rem solid #5e473e;
+    padding-bottom: 1.5rem;
+}
+
+.title span{
+    font-size: 2.5rem;
+    color: #5e473e;
+}
+
+.title a{
+    font-size: 1.5rem;
+    color: #b58d7e;
+}
+
+.title a:hover{
+    transform: translateX(-3px);
+    color: #9e7464;
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #b58d7e, #845f51);
+    color: #faf766;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+.btn:hover{
+    background: linear-gradient(135deg,#945f51,#b58d7e);
+}
+
+/*HEADER SECTION START -  Giúp nội dung trong header (logo, menu, nút bấm) hiển thị đẹp & cân đối*/
+
+.header{
+   padding: 2rem 9%; 
+   /* - 2rem → Khoảng cách bên trong (trên/dưới) là 2 rem.
+      - 9% → Khoảng cách bên trong (trái/phải) là 9% của chiều rộng màn hình.*/
+   position: -webkit-sticky;
+   position: sticky; /* Giữ header cố định khi cuộn trang, nhưng vẫn có thể di chuyển nếu cần.*/
+   top: 0; /* Header dính sát đỉnh trình duyệt.*/
+   /* Trải rộng hết chiều ngang.*/
+   left: 0;
+   right: 0;
+   z-index: 100; /* Đảm bảo header nằm trên các phần tử khác*/
+   background: #f0e8e4;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-align: center;
+   -ms-flex-align: center;
+   align-items: center; /* Căn giữa các phần tử theo chiều dọc.*/
+   -webkit-box-pack: justify;
+   -ms-flex-pack: justify;
+   justify-content: space-between; /* Cách đều các phần tử, một bên trái - một bên phải.*/
+   border-radius: 0 0 2rem 2rem; /* Bo tròn góc dưới (góc trên giữ nguyên).*/
+}
+
+/* Đây là kiểu dáng cho logo trong header.*/
+.header .logo {
+    font-size: 2.5rem; /* 1rem = 16px (mặc định), nên 2.5rem ≈ 40px.*/
+    color: #504750;
+    font-weight: 500;
+}
+
+.header .logo i{
+    padding-right: .3rem; /* Tạo khoảng cách 0.3rem (≈ 5px) giữa icon và chữ trong logo.*/
+}
+
+.header .search-form {
+    height: 5rem; /* Chiều cao của ô tìm kiếm là 80px (1rem = 16px).*/
+    width: 50rem; /* Chiều rộng 800px (rộng vừa đủ để chứa chữ).*/
+    border-radius: .75rem; /* Bo tròn góc 12px → Nhìn mềm mại hơn*/
+    background-color: transparent; /* Nền trong suốt.*/
+    overflow: hidden; /* Giúp ẩn nội dung tràn ra ngoài */
+ 
+    /* Hiển thị Flexbox (Căn giữa nội dung)*/   
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; /* Căn giữa icon tìm kiếm và text trong ô*/
+
+    background: #f0e8e4;
+    border: .1rem solid #caab9f;
+}
+
+.header .search-form input {
+    height: 100%; /* Chiều cao bằng 100% của form, giúp ô nhập cân đối.*/
+    width: 100%; /* Rộng 100px → Nhỏ so với form (có thể cần tăng lên).*/
+    padding: 0 1.2rem; /* Tạo khoảng cách ngang để chữ không sát mép*/
+    
+    font-size: 1.6rem;  /* Cỡ chữ 25.6px (1rem = 16px).*/
+    color: #5e473e;
+    text-transform: none;
+    background: transparent; /* Giữ nguyên chữ thường, không tự động viết hoa.*/
+}
+
+/* (Chữ gợi ý bên trong input)*/
+.header .search-form input ::placeholder {
+    color: #5e473e;
+
+    /* Khi nhập chữ vào, placeholder sẽ mờ đi nhẹ nhàng.*/
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Label (Nhãn cho ô tìm kiếm)*/
+.header .search-form label {
+    font-size: 2.2rem; /* Cỡ chữ lớn, giúp dễ nhìn thấy.*/
+    padding-right:  1.7rem; /* Tạo khoảng cách giữa label và input.*/
+    cursor: pointer; /* Khi rê chuột vào, hiện con trỏ bàn tay, giúp người dùng biết có thể click.*/
+    color: #5e473e;
+}
+
+/* Label sẽ đổi màu nhẹ khi rê chuột vào, giúp thu hút sự chú ý.*/
+.header .search-form label:hover {
+    color: #9e7464;
+    transition: color 0.3s;
+}
+
+.header .icons {
+    display: flex;
+    align-items: center; /* Canh giữa icon theo chiều dọc.*/
+}
+
+.header .icons div {
+    margin-left: 2rem; /* Tạo khoảng cách giữa các icon.*/
+    font-size: 2.5rem; /* Tăng kích thước icon lên khoảng 40px.*/ 
+    cursor: pointer;
+    color: #5e473e;
+}
+
+/* Thêm hiệu ứng đổi màu khi rê chuột vào icon*/
+.header .icons div:hover {
+    color: #9e7464;
+    transform: scale(1.1);
+    transition: color 0.3s, transform 0.3s;
+}
+
+#search-btn {
+    display: none;
+}
+
+/*HEADER SECTION END*/
+
+/* Keyframe Animation (Hiệu ứng xoay và hiện dần)
+    0% → Khi animation bắt đầu, nút #closer sẽ:
+       - Xoay 360 độ (rotate(360deg))
+       - Ẩn (opacity: 0;)
+    Không có 100% → Mặc định, khi kết thúc animation, nút sẽ trở lại trạng thái bình thường.
+*/
+@-webkit-keyframes rotate {
+    0% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Thêm hiệu ứng fade-in khi hiện #closer*/
+@keyframes rotateFadeIn {
+    0% {
+        transform: rotate(360deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+}
+
+#closer {
+    position: fixed; /* Nút cố định ở vị trí góc trên bên phải màn hình.*/
+    top: 5rem;  /* Cách lề trên và phải lần lượt 80px và 64px.*/
+    right: 4rem;
+    font-size: 5rem; /* Kích thước lớn, dễ thấy (~80px).*/
+    cursor: pointer;
+    z-index: 10000;   /* Nút nằm trên tất cả các phần tử khác.*/
+    color: #5e473e;
+    
+    /* Hiệu ứng xuất hiện (animation: rotate .4s linear .4s backwards;) 
+        * .4s → Animation chạy trong 0.4 giây.
+        * linear → Chạy mượt với tốc độ đều.
+        * .4s → Chậm 0.4 giây trước khi xuất hiện.
+        * backwards → Giữ trạng thái ban đầu trong thời gian delay.
+    */
+    -webkit-animation: rotate .4s linear .4s backwards;
+     /*animation: rotate .4s linear .4s backwards;*/
+    animation: rotateFadeIn 0.4s ease-out 0.4s backwards;
+    
+    display: none; /* Mặc định ẩn (chỉ hiển thị khi cần).*/
+}
+
+#closer:hover {
+    color: #9e7464;
+}
+
+/* NAVBAR START*/
+
+.navbar {
+    position: fixed; /*  Navbar luôn cố định trên màn hình, không bị cuộn theo trang.*/
+    
+    top: 1.5%;    /* Navbar chiếm toàn bộ chiều cao màn hình, trừ 1.5% khoảng cách trên và dưới.*/
+    bottom: 1.5%;
+  
+    right: -101%;  /* Ẩn navbar hoàn toàn ra khỏi màn hình, vì nó nằm ngoài 101% chiều rộng trang. */
+   /*right: 0;*/ /* Nếu muốn hiện navbar, chỉ cần đổi lại thành right: 0;*/
+    z-index: 1000; /* Hiển thị phía trên các phần tử khác.*/
+    width: 35rem;  /* Chiều rộng navbar là 35rem (~560px).*/
+    /*height: 100vh;*/
+    background: #f0e8e4;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 2%;
+    border-radius: 3rem;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; /* Căn giữa các mục theo chiều ngang.*/
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column;
+    flex-flow: column;
+}
+
+
+.navbar.active {
+    right: 0;   /* Khi .navbar có class active, nó dịch chuyển vào màn hình, thay vì bị ẩn (right: -101%).*/
+    -webkit-box-shadow: 0 0 0 100vw rgba(0,0,0,.5);
+    box-shadow: 0 0 0 100vw rgba(0,0,0,.5);
+    -webkit-transition: .4s linear;
+    transition: .4s linear; /* Hiệu ứng mượt khi navbar xuất hiện trong 0.4 giây.*/
+}
+
+.navbar a {
+    margin: 1rem 0; /* Tạo khoảng cách dọc giữa các thẻ <a>*/
+    font-size: 2.5rem;  /* Phóng to chữ trong menu điều hướng.*/
+    color: #5e473e;
+
+   transition: color 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+    color: #9e7464;
+}
+
+
+/* NAVBAR END*/
+
+
+/* SHOPPING CART START*/
+
+.shopping-cart {
+    position: fixed; /* Phần tử được định vị cố định so với cửa sổ trình duyệt. 
+                        Nó sẽ luôn nằm ở vị trí xác định, không bị cuộn theo nội dung trang.*/
+   
+    top: 1.5%;       /* Giúp phần tử cách mép trên và dưới của cửa sổ trình duyệt khoảng 1.5% chiều cao. */
+    bottom: 1.5%;    /* Điều này đảm bảo rằng phần tử không dính sát vào mép trên và dưới.*/
+
+ right: -101%;
+   /* right: 0;  */      /* Phần tử được đặt sát bên phải của cửa sổ. (Ghi chú: Có dòng / right: -101%; / được comment,
+                         có thể dùng để ẩn phần tử ngoài màn hình khi cần.)*/       
+    z-index: 1000;    /* Đảm bảo phần tử nằm trên các phần tử khác trong trang.*/
+    width: 35rem;     /* Đặt chiều rộng của giỏ hàng là 35 rem (tương đương khoảng 560px nếu 1rem = 16px).*/
+/* height: 100vh;*/
+    background: #f0e8e4;
+    
+    padding: 2rem;    /* Tạo khoảng đệm bên trong, với khoảng đệm trên lớn hơn (8rem) */
+    padding-top: 8rem; /* để có thể chứa các phần tử hoặc tiêu đề cách xa mép trên.*/
+   
+    overflow-y: scroll;  /* Nếu nội dung giỏ hàng vượt quá chiều cao phần tử, thanh cuộn sẽ xuất hiện để người dùng có thể cuộn xem.*/
+    margin: 2%;        /* Tạo khoảng cách xung quanh phần tử để không bị dính sát vào các phần tử khác hoặc mép màn hình.*/
+    
+    border-radius: 3rem;
+}
+
+/* Hiệu ứng khi giỏ hàng có class .active */
+.shopping-cart.active {
+    right: 0;   /* Khi .navbar có class active, nó dịch chuyển vào màn hình, thay vì bị ẩn (right: -101%).*/
+    
+    -webkit-box-shadow: 0 0 0 100vw rgba(0,0,0,.5); /* Tạo một hiệu ứng "lớp phủ" mờ lên toàn bộ viewport với màu đen bán trong suốt (50% opacity). */
+     box-shadow: 0 0 0 100vw rgba(0,0,0,.5);        /* Giá trị 100vw cho shadow spread khiến hiệu ứng bóng lan ra toàn bộ chiều rộng của cửa sổ, 
+                                                         tạo cảm giác như nền bị mờ lại khi giỏ hàng mở ra.*/
+   
+    -webkit-transition: .4s linear;
+    transition: .4s linear; /* Hiệu ứng mượt khi navbar xuất hiện trong 0.4 giây.*/
+}
+
+/* Tùy chỉnh thanh cuộn của .shopping-cart 
+    1- .shopping-cart: Là một phần tử cố định, được thiết kế để hiển thị giỏ hàng với kích thước và bố cục rõ ràng, có hiệu ứng mờ nền khi mở (active).
+    2-  Thanh cuộn được tùy chỉnh với các pseudo-element của WebKit.
+    3-  Các hộp (.box) bên trong giỏ hàng được sắp xếp bằng Flexbox, có khoảng cách đều và bo góc mềm mại để hiển thị các mục (ví dụ: sản phẩm trong giỏ).
+*/  
+
+.shopping-cart::-webkit-scrollbar { /* Chọn thanh cuộn của phần tử trên các trình duyệt dựa trên WebKit (Chrome, Safari,...). */
+    width: 0; /* Đặt chiều rộng của thanh cuộn là 0, có nghĩa là bạn có thể ẩn thanh cuộn 
+                 (hoặc không hiển thị thanh cuộn theo thiết kế mong muốn).*/
+}
+
+.shopping-cart::-webkit-scrollbar-track{
+    background: #eae0dc; /* Tùy chỉnh nền của "track" (vùng mà thanh cuộn chạy qua) với màu #eae0dc.*/
+}
+
+.shopping-cart::-webkit-scrollbar-thumb {
+    background: #b58d7e;  /* Tùy chỉnh thanh cuộn ("thumb") với màu #b58d7e.*/
+}
+
+
+.shopping-cart .box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; /* Căn giữa các phần tử theo chiều dọc trong box.*/
+    gap: 1.5rem;
+
+    position: relative;  /* Cho phép các phần tử con bên trong được định vị tương đối với box này nếu cần.*/
+    margin-bottom: 1rem; /* Tạo khoảng cách giữa các box với nhau.*/
+    padding: 0.75rem;    /* Tạo khoảng cách nội dung bên trong box để không bị dính vào mép.*/ 
+    background-color: #faf7f6;
+    border-radius: 1rem;
+}
+
+.shopping-cart .box .close-icon { /* Định vị một biểu tượng đóng. Biểu tượng đóng (.close-icon) sẽ luôn: ✔ Nằm ở góc phải của .box. */
+    position: absolute;
+    /* 1- Giúp phần tử .close-icon được đặt tương đối so với .box 
+       (phần tử cha có position: relative; mặc định hoặc được định nghĩa trước đó).
+       2- Điều này giúp close-icon không bị ảnh hưởng bởi các phần tử xung quanh mà 
+       có thể tự do di chuyển bên trong .box.*/
+    
+    top: 50%;
+    /* - Định vị phần tử từ đỉnh .box xuống 50% chiều cao của .box.
+       - Nhưng điều này chỉ căn chỉnh phần trên của .close-icon, chưa giúp nó nằm giữa hoàn toàn.*/
+    
+    right: 1rem;
+    /* - Đặt close-icon cách mép phải của .box 1 rem (~16px nếu 1rem = 16px).
+       - Điều này giúp icon không dính sát vào mép mà có khoảng cách phù hợp*/
+
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    /* - Dịch chuyển phần tử theo chiều dọc lên trên 50% chiều cao của chính nó.
+       - Kết hợp với top: 50%, giúp phần tử căn giữa chính xác theo trục Y trong .box.*/
+
+    font-size: 2rem;
+    color: #5e473e;
+    cursor: pointer;
+}
+
+.shopping-cart .box .close-icon:hover {
+    color: #9e7464;
+}
+
+.shopping-cart .box img {
+    border-radius: .65rem;
+    height: 8rem;    /* Cố định chiều cao ảnh sản phẩm, giúp giao diện đồng đều. */
+}
+
+.shopping-cart .box .content h3 { /* Tiêu đề sản phẩm (h3) */
+    color: #5e473e;
+    font-size: 1.8rem;
+    padding-bottom: .5rem; /* Giữ khoảng cách với giá sản phẩm. */
+}
+
+.shopping-cart .box .content span { /* Giá sản phẩm (span) */
+    font-size: 1.5rem; /* Cỡ chữ nhỏ hơn tiêu đề (font-size: 1.5rem;) → Không quá nổi bật nhưng vẫn dễ nhìn. */
+    color: #b58d7e;
+}
+
+.shopping-cart .box .content span.multifly { /* Dấu nhân "x" giữa số lượng và giá */
+    margin: 0 1rem; /* Giúp dấu nhân x không bị dính vào số lượng hoặc giá. */
+}
+
+.shopping-cart .total {  /* Tổng tiền (.total) */
+    text-align: center;
+    font-size: 2rem;
+    padding: 1rem 0;  /* Để người dùng dễ nhìn thấy số tiền cần thanh toán. */
+    color: #845f51; /* Một màu nâu trầm hơn để nhấn mạnh. */
+}
+
+.shopping-cart .total span {
+    color: #5e473e; /* Giúp con số nổi bật hơn. */
+}
+
+.shopping-cart .btn { /* Nút đặt hàng (.btn) */
+    width: 100%;  /*  Nút sẽ chiếm toàn bộ chiều ngang của giỏ hàng. */
+    text-align: center;  /*  Tránh bị lệch. */
+}
+
+/* SHOPPING CART END*/
+
+/* LOGIN FORM START */
+
+
+.login-form {
+    position: fixed; /* Phần tử được định vị cố định so với cửa sổ trình duyệt. 
+                        Nó sẽ luôn nằm ở vị trí xác định, không bị cuộn theo nội dung trang.*/
+   
+    top: 1.5%;       /* Giúp phần tử cách mép trên và dưới của cửa sổ trình duyệt khoảng 1.5% chiều cao. */
+    bottom: 1.5%;    /* Điều này đảm bảo rằng phần tử không dính sát vào mép trên và dưới.*/
+
+right: -101%;
+   /*right: 0;        /* Phần tử được đặt sát bên phải của cửa sổ. (Ghi chú: Có dòng / right: -101%; / được comment,
+                         có thể dùng để ẩn phần tử ngoài màn hình khi cần.)*/       
+    z-index: 1000;    /* Đảm bảo phần tử nằm trên các phần tử khác trong trang.*/
+    width: 35rem;     /* Đặt chiều rộng của giỏ hàng là 35 rem (tương đương khoảng 560px nếu 1rem = 16px).*/
+/* height: 100vh;*/
+    background: #f0e8e4;
+    
+    padding: 2rem;    /* Tạo khoảng đệm bên trong, với khoảng đệm trên lớn hơn (8rem) */
+    padding-top: 8rem; /* để có thể chứa các phần tử hoặc tiêu đề cách xa mép trên.*/
+   
+    overflow-y: scroll;  /* Nếu nội dung giỏ hàng vượt quá chiều cao phần tử, thanh cuộn sẽ xuất hiện để người dùng có thể cuộn xem.*/
+    margin: 2%;        /* Tạo khoảng cách xung quanh phần tử để không bị dính sát vào các phần tử khác hoặc mép màn hình.*/
+    
+    border-radius: 3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+/* Hiệu ứng khi giỏ hàng có class .active */
+.login-form.active {
+    right: 0;   /* Khi .navbar có class active, nó dịch chuyển vào màn hình, thay vì bị ẩn (right: -101%).*/
+    
+    -webkit-box-shadow: 0 0 0 100vw rgba(0,0,0,.5); /* Tạo một hiệu ứng "lớp phủ" mờ lên toàn bộ viewport với màu đen bán trong suốt (50% opacity). */
+     box-shadow: 0 0 0 100vw rgba(0,0,0,.5);        /* Giá trị 100vw cho shadow spread khiến hiệu ứng bóng lan ra toàn bộ chiều rộng của cửa sổ, 
+                                                         tạo cảm giác như nền bị mờ lại khi giỏ hàng mở ra.*/
+   
+    -webkit-transition: .4s linear;
+    transition: .4s linear; /* Hiệu ứng mượt khi navbar xuất hiện trong 0.4 giây.*/
+}
+
+.login-form form {
+    padding: 1.7rem;   /* Tạo khoảng cách giữa nội dung của <form> và viền ngoài */
+    border: .1rem solid #caab9f;   /* Viền 0.1rem  (rất mỏng) (liền mạch) màu nâu nhạt (#caab9f) */
+    border-radius: 2rem;    /* Bo tròn góc viền (2rem) */
+    /*background: #fff; /* Nền trắng */
+    /*box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng nhẹ */
+}
+
+/* ✔ Làm tiêu đề nổi bật hơn với cỡ chữ lớn.
+   ✔ Tạo khoảng cách dưới tiêu đề giúp bố cục dễ nhìn hơn.
+   ✔ Màu nâu đậm giúp dễ đọc hơn trên nền sáng. */
+.login-form form h3 {
+    font-size: 2.2rem;
+    padding-bottom: 1rem;
+    color: #5e473e;
+}
+
+/*  ✔ Làm input kéo dài toàn bộ form để căn chỉnh đẹp.
+    ✔ Chữ nhập vào có kích thước lớn, dễ nhìn.
+    ✔ Viền và màu chữ thống nhất với thiết kế của form.
+    ✔ border-radius: .75rem; giúp các góc mềm mại hơn.
+    ✔ background: transparent; giúp giữ nền trong suốt, có thể kết hợp với hiệu ứng nền mờ nếu cần. */
+.login-form form .box {
+    width: 100%;
+    text-transform: none;
+    font-size: 1.5rem;
+    color: #5e473e;
+    padding: 1rem 1.2rem;
+    border: .1rem solid #caab9f;
+    margin: 0.7rem 0;
+    border-radius: .75rem;
+    background: transparent;
+
+    background: rgba(255, 255, 255, 0.1); /* Nền mờ nhẹ */
+    backdrop-filter: blur(5px); /* Hiệu ứng nền mờ */
+}
+
+.login-form form .box::placeholder {
+    color: #845f51;
+}
+
+/* ✅ Dùng display: flex; để căn checkbox và nhãn cùng dòng.
+   ✅ align-items: center; giúp căn giữa theo chiều dọc.
+   ✅ gap: .5rem; tạo khoảng cách nhỏ giữa checkbox và nhãn.
+*/
+
+.login-form form .remember {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: .5rem;
+}
+.login-form form .remember label:hover {
+    color: #5e473e; /* Màu đậm hơn khi rê chuột */
+}
+.login-form form .remember input[type="checkbox"] {
+    width: 1.6rem;
+    height: 1.6rem;
+
+    accent-color: #b58d7e; /* Đổi màu checkbox - 
+                                Tính năng accent-color giúp thay đổi màu của checkbox mà không cần thêm CSS phức tạp! */
+
+    cursor: pointer;
+}
+
+.login-form form .remember label {
+    padding: 1rem 0;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #b58d7e;
+}
+
+.login-form form .btn {
+    width: 100%;    /* Nút chiếm toàn bộ chiều ngang form.*/
+    margin: 1rem 0;
+    text-align: center;
+}
+
+/* 🔹 Khi rê chuột vào, màu nền đậm hơn & chữ thành màu trắng!
+.login-form form .btn:hover {
+    background: #5e473e;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+}*/
+
+.login-form form p {
+    padding-top: 1rem;
+    font-size: 1.4rem;
+    color: #b58d7e;
+}
+
+.login-form form p a {
+    color: #5e473e;
+}
+
+.login-form form p a:hover {
+    text-decoration: underline; /* Khi rê chuột vào, gạch chân xuất hiện, giúp người dùng nhận biết đó là liên kết. */
+}
+
+/* LOGIN FORM END */
+
+
+/* FOOTER START */
+
+.footer {
+    margin: 2%;   /* → Tạo khoảng cách giữa footer và các phần khác trên trang.*/
+    border-radius: 3rem;
+    background: #f0e8e4;
+}
+        /* 💡 Hiệu ứng hover nhẹ nhàng:
+        .footer:hover {
+            background: #e5d6d1; /* Màu nhạt hơn khi di chuột vào 
+            transition: background 0.3s ease-in-out;
+        }*/
+
+.footer .box-container {
+    display: -ms-grid;
+    display: grid;    /* Sử dụng CSS Grid để sắp xếp các phần tử. */
+
+    -ms-grid-column: (minmax(25rem, 1fr))[auto-fit];
+        /* Sử dụng auto-fit để các hộp tự động co giãn dựa vào kích thước màn hình.
+           Mỗi hộp có kích thước tối thiểu 25rem và tối đa chiếm toàn bộ không gian có thể.*/
+
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));  
+    gap: 1.5rem;  /* → Tạo khoảng cách giữa các hộp. */
+}         
+
+.footer .box-container .box h3 {
+    font-size: 2.2rem;   /* Kích thước chữ lớn, dễ đọc */
+    color: #5e473e;    /* Màu nâu đậm, đồng bộ với giao diện */ 
+    padding: 1rem 0;     /* Thêm khoảng cách trên và dưới để thoáng hơn */
+}
+
+.footer .box-container .box p {
+    font-size: 1.6rem;  /* Cỡ chữ vừa phải, dễ đọc */
+    color: #b58d7e;   /* Màu nâu nhạt, nhẹ nhàng */
+    padding: 1rem;      /* Thêm khoảng cách để văn bản không bị dính vào viền */
+}
+
+.footer .box-container .box a {
+    font-size: 1.4rem;      /* Cỡ chữ nhỏ gọn, dễ nhìn */
+    color: #5e473e;       /* Màu nâu trầm, phù hợp với giao diện */
+    padding: 1rem 0;        /* Thêm khoảng cách trên và dưới để thoáng hơn */
+    display: block;
+}
+
+/* FOOTER END */
+
+
+
+
+
+
+
